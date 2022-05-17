@@ -9,8 +9,19 @@ java {
 }
 
 dependencies {
+
+    /**
+     * api -> All modules that use this module will have access
+     *       to dependencies annotated with 'api'.
+     */
+
     // Retrofit
     def retrofit_version = '2.9.0'
-    implementation "com.squareup.retrofit2:retrofit:$retrofit_version"
-    implementation "com.squareup.retrofit2:converter-gson:$retrofit_version"
+    api "com.squareup.retrofit2:retrofit:$retrofit_version"
+    api "com.squareup.retrofit2:converter-gson:$retrofit_version"
+
+    // OkHttp
+    api(platform("com.squareup.okhttp3:okhttp-bom:4.9.0"))
+    api("com.squareup.okhttp3:okhttp")
+    api("com.squareup.okhttp3:logging-interceptor")
 }
