@@ -16,3 +16,4 @@ local.properties
 apikey.properties
 keystore.properties
 /store
+/app/google-services.json
